@@ -1,11 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import Colors from "../../constants/Colors";
+import BodyText from "./BodyText";
 
 export default function AppButton({ title, type, onPress, style }) {
   return (
     <TouchableOpacity style={{ ...styles[type], ...style }} onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
+      <BodyText style={styles.text} isBold={true}>
+        {title}
+      </BodyText>
     </TouchableOpacity>
   );
 }
@@ -27,6 +30,5 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 14,
     textTransform: "uppercase",
-    fontWeight: "700",
   },
 });

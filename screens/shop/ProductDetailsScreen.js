@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, View } from "react-native";
 import { useSelector } from "react-redux";
 import AppButton from "../../components/common/AppButton";
+import BodyText from "../../components/common/BodyText";
 
 export default function ProductDetailsScreen({ navigation }) {
   const productId = navigation.getParam("productId");
@@ -17,8 +18,12 @@ export default function ProductDetailsScreen({ navigation }) {
             source={{ uri: selectedProduct.imageUrl }}
           />
         </View>
-        <Text style={styles.price}>${selectedProduct.price.toFixed(2)}</Text>
-        <Text style={styles.description}>{selectedProduct.description}</Text>
+        <BodyText style={styles.price} isBold>
+          ${selectedProduct.price.toFixed(2)}
+        </BodyText>
+        <BodyText style={styles.description}>
+          {selectedProduct.description}
+        </BodyText>
       </ScrollView>
       <View style={styles.btnContainer}>
         <AppButton title="Add To cart" onPress={() => {}} style={styles.btn} />

@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity } from "react-native";
 import Colors from "../../constants/Colors";
 import AppButton from "../common/AppButton";
+import BodyText from "../common/BodyText";
 
 export default function ProductItem({
   image,
@@ -22,8 +23,10 @@ export default function ProductItem({
           />
         </View>
         <View style={styles.details}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.price}>${price.toFixed(2)}</Text>
+          <BodyText style={styles.title}>{title}</BodyText>
+          <BodyText style={styles.price} isBold={true}>
+            ${price.toFixed(2)}
+          </BodyText>
         </View>
         <View style={styles.actions}>
           <AppButton
@@ -71,8 +74,6 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 16,
-    //  color: "#888",
-    fontWeight: "700",
   },
   details: {
     flexDirection: "row",
