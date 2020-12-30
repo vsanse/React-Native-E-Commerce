@@ -5,6 +5,6 @@
 yarn
 yarn start
 ```
-<!-- 
-![Favorites](./sample/img1.png)
-![Favorites](./sample/img2.png) -->
+
+![APP](./sample/img1.png)
+![APP](./sample/img2.png)
